@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class MailSendController {
-    private MailSendService mailSendService;
+    private final MailSendService mailSendService;
 
 
     /*==================================================================================*/

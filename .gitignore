@@ -39,17 +39,20 @@ out/
 
 ### React ###
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+!**/front-react/
+!**/front-react/public/
+!**/front-react/src/
 
 # dependencies
-**/node_modules
-**/.pnp
+**/node_modules/
+**/.pnp/
 **/.pnp.js
 
 # testing
-**/coverage
+**/coverage/
 
 # production
-**/build
+**/build/
 
 # misc
 **/.DS_Store
