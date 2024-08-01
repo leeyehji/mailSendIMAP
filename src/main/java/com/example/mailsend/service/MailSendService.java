@@ -23,9 +23,9 @@ import java.util.regex.Pattern;
 @Service
 @Transactional(readOnly = false)
 public class MailSendService {
-    private MailConfig mailConfig;
-    private JavaMailSender javaMailSender;
-    private RedisTemplate<String, String> redisTemplate;
+    private final MailConfig mailConfig;
+    private final JavaMailSender javaMailSender;
+    private final RedisTemplate<String, String> redisTemplate;
 
     private static final long AUTH_CODE_EXPIRATION_HOURS = 1;
     private static final String EMAIL_AUTH_HASH = "email_auth_hash";
@@ -136,7 +136,6 @@ public class MailSendService {
             //이메일 전송: MailException
             javaMailSender.send(message);
         }catch(MailException | MessagingException mailException){
-            mailException.printStackTrace();
             throw new IllegalArgumentException("이메일 내용 작성 중, 혹은 이메일 전송 중 문제가 발생했습니다.");
         }
         return true;
